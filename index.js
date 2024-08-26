@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
@@ -47,9 +48,11 @@ app.delete('/list', async (req, res) => {
     res.send('response');
 })
 
-app.get('/search', (req, res) => {
+app.get('/search', async (req, res) => {
     const { q } = req.query;
-    res.render('search.ejs', { q, preview: true });
+    const config = { params: { q } };
+    const showResults = await axios.get('https://api.tvmaze.com/search/shows', config);
+    res.render('search.ejs', { q, preview: true, showResults: showResults.data });
 })
 
 app.use((req, res) => {
