@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+
+<main class="container-fluid ms-3">
+    <h1 class="title mb-0">Showing results for '<%= q %>'</h1>
+    <section class="searchResults container mt-4"></section>
+    <div class="position-absolute top-50 start-50 translate-middle text-center empty-list hidden">
+        <img src="/imgs/tree_trunks.svg" alt="Tree Trunks SVG" width="350">
+        <p class="empty-list-text">No Results</p>
+    </div>
+</main>
+    
+<%- include('partials/dimmer.ejs') %>
+<script>
+    const searchTerm = '<%= q %>';
+</script>
+<script src="/js/navFunctions.js"></script>
+<script src="/js/dimmer.js"></script>
+<script src="/js/search.js"></script>
+</body>
+</html>
