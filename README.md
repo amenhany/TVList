@@ -1,4 +1,7 @@
-# TV Show List 📺
+# TV Show List 📺 (discontinued)
+
+> [!NOTE]
+> This repository is discontinued in favour of the more updated [React version](https://github.com/amenhany/react-tv-list) of the website.
 
 This website is used to make a list of your favourite TV Shows! It fetches shows from the [TVMaze API](https://www.tvmaze.com/api) and allows you to add them to your list with a rating.
 
